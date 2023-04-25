@@ -1,0 +1,20 @@
+[package]
+name = "parametric-insurance-policy-manager"
+version = "0.1.0"
+edition = "2018"
+authors = ["Hillridge"]
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[profile.release]
+codegen-units = 1
+# Tell `rustc` to optimize for small code size.
+opt-level = "s"
+lto = true
+debug = false
+panic = "abort"
+overflow-checks = true
+
+[dependencies]
+near-sdk = "3.1.0"
